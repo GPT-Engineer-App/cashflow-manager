@@ -128,7 +128,7 @@ const Index = () => {
   };
 
   const filteredTransactions = applyFilter(transactions);
-  const totalBalance = transactions.reduce((acc, transaction) => (transaction.type === "income" ? acc + transaction.amount : acc - transaction.amount), 0);
+  const totalBalance = transactions.reduce((acc, transaction) => (transaction.type === "income" ? acc + parseFloat(transaction.amount) : acc - parseFloat(transaction.amount)), 0);
 
   return (
     <Box p={8}>
